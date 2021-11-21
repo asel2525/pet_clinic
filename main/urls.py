@@ -38,4 +38,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-auth/', include('rest_auth.urls')),
     path('api/v1/swagger/', schema_view.with_ui(), name='schema-json'),
+    path('api/v1/pet/', include('pets.urls'))
 ]
