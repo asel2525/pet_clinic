@@ -10,10 +10,10 @@ class DoctorAppointment(admin.TabularInline):
 
 # admin.site.register()
 
-class doctorAdmin(admin.ModelAdmin):
+class DoctorAdmin(admin.ModelAdmin):
     list_display=['get_name', 'address', 'mobile', 'user']
     inlines=[DoctorAppointment]
 
 
-admin.site.register(Doctor,doctorAdmin)
+admin.site.register(Doctor,DoctorAdmin)
 

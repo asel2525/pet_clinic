@@ -15,11 +15,11 @@ class Doctor(models.Model):
 
     @property
     def get_name(self):
-        return self.user.first_name+" "+self.user.last_name
+        return self.user.first_name
     @property
     def get_id(self):
         return self.user.id
     def __str__(self):
-        return "{} ({})".format(self.user.first_name,self.last_name)
+        return "{}".format(self.user.first_name)
 
 
