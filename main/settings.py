@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'accounts',
     'pets',
     'doctors',
+    'clinicAdmin',
+    'comments',
     
 
 ]
