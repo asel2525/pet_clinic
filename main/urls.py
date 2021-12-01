@@ -40,5 +40,4 @@ urlpatterns = [
     path('api/v1/swagger/', schema_view.with_ui(), name='schema-json'),
     path('api/v1/pet/', include('pets.urls')),
     path('api/v1/doctor/', include('doctors.urls')),
-    path('api/v1/admin/', include('clinicAdmin.urls')),
 ]

@@ -52,8 +52,9 @@ class PetOwnerRegistrationSerializer(serializers.Serializer):
  
 
 class PetProfileSerializer(serializers.ModelSerializer):
-    model = Pet
-    fields = ['pet_name', 'pet_age', 'owner_address', 'owner_mobile',]
+    class Meta:
+        model = Pet
+        fields = ['pet_name', 'pet_age', 'owner_address', 'owner_mobile',]
 
     def validate_mobile(self, owner_mobile):
         if owner_mobile.isdigit()==False:
@@ -111,5 +112,6 @@ class PetHistorySerializer(serializers.ModelSerializer):
     symptomps=serializers.CharField(label="Симптомы:", style={'base_template': 'textarea.html'})
     release_date=serializers.DateField(label="Дата выхода:", required=False)
     assigned_doctor=serializers.StringRelatedField(label='Назначенный доктор:')
-    patient_appointments=AppointmentSerializer(label="Записи:",many=True)
+    pet_appointments=AppointmentSerializer(label="Записи:",many=True)
     costs=PetCostSerializer()
+
